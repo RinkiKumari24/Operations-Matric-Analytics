@@ -2,10 +2,10 @@ create database if not exists operation_analytics;
 use operation_analytics;
 select * from job_data;
 
-#no. of jobs viewd per hour per day for nov 2020
+#no. of jobs viewd per hour per day for dec 2023
 select ds as date, 
 round((count(job_id)/sum(time_spent))*3600) as "jobs viewd per hour per day" from job_data 
-WHERE ds BETWEEN "01-11-2020" AND "30-11-2020" group by ds;
+WHERE ds BETWEEN "01-12-2023" AND "30-12-2023" group by ds;
 
 #calc 7 day rolling avg throughput(no. of events happening pere sec)
 select round((count(event)/sum(time_spent)),2) as weekly_throughput 
